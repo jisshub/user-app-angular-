@@ -6,16 +6,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./log-data.component.css']
 })
 export class LogDataComponent implements OnInit {
-
   secretPassword: string;
-  constructor() { 
+  clickDataArray: Array<number> = [];
+  inc: number = 100;
+  constructor() {
   }
 
   ngOnInit(): void {
   }
-  getParagraph(): string{
+  OnBtnClick(): string{
     this.secretPassword = "jiss#45@01";
     return this.secretPassword;
+  }
+  OnBtnCount(): Array<number>{   
+    this.clickDataArray.push(this.inc);
+    this.inc += 2;
+    return this.clickDataArray;
+  }
+  getBgColor(): string{
+    if(this.clickDataArray.length >= 5){
+      return "red";
+    }
   }
 
 }
