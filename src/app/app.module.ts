@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
+import { LogDataComponent } from './log-data/log-data.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent
+    UserComponent,
+    LogDataComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,7 @@
+<button class="btn btn-primary m-3"
+(click)="getParagraph()">Display Details</button>
+<!-- add paragraph only if secret password is set, use ngIf --> 
+<p *ngIf="secretPassword; else noPassword">Your secret password is {{secretPassword}}</p>
+<ng-template #noPassword>
+    <p>no secret Password exist</p>
+</ng-template>
