@@ -1,12 +1,14 @@
 <button class="btn btn-primary m-3"
 (click)="OnBtnClick()">Display Details</button>
-<!-- add paragraph only if secret password is set, use ngIf --> 
-<p *ngIf="secretPassword; else noPassword">Your secret password is {{secretPassword}}</p>
-<ng-template #noPassword>
-    <p>no secret Password exist</p>
-</ng-template>
+<!-- show paragraph only if button is clicked, use ngIf --> 
+<p *ngIf="isShow" class="m-3">Secret Password is {{secretPassword}}</p>
+
+<!-- if we click button again, paragraph is removed, since ngIf will be false on another click -->
+<br>
 
 <button class="btn btn-danger m-3"
 (click)="OnBtnCount()">Click Me</button>
 <p *ngFor="let eachClick of clickDataArray" 
-[ngStyle]="{backgroundColor: getBgColor()}" class="m-2">{{ eachClick }}</p>
+[ngStyle]="{backgroundColor: eachClick>110? 'red':'blue'}"
+[ngClass]="{'text-white': eachClick>110}"
+class="m-2">{{ eachClick }}</p>
