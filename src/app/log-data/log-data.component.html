@@ -2,7 +2,6 @@
 (click)="OnBtnClick()">Display Details</button>
 <!-- show paragraph only if button is clicked, use ngIf --> 
 <p *ngIf="isShow" class="m-3">Secret Password is {{secretPassword}}</p>
-
 <!-- if we click button again, paragraph is removed, since ngIf will be false on another click -->
 <br>
 
@@ -11,4 +10,5 @@
 <p *ngFor="let eachClick of clickDataArray" 
 [ngStyle]="{backgroundColor: eachClick>110? 'red':'blue'}"
 [ngClass]="{'text-white': eachClick>110}"
+[ngClass]="{'text-green': eachClick<=110}"
 class="m-2">{{ eachClick }}</p>
