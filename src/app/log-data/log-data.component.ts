@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class LogDataComponent implements OnInit {
   secretPassword: string;
   isShow: boolean = false;
-  clickDataArray: Array<number> = [];
+  clickDataArray: Array<String> = [];
   inc: number = 100;
   constructor() {
   }
@@ -21,9 +21,9 @@ export class LogDataComponent implements OnInit {
     this.secretPassword = "jiss#45@01";
     return this.secretPassword;
   }
-  OnBtnCount(): Array<number>{   
-    this.clickDataArray.push(this.inc);
-    this.inc += 2;
+  OnBtnCount(): String[]{   
+    this.clickDataArray.push(new Date().toLocaleTimeString());
+    // this.inc += 2;
     return this.clickDataArray;
   }
 

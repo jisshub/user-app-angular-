@@ -7,8 +7,9 @@
 
 <button class="btn btn-danger m-3"
 (click)="OnBtnCount()">Click Me</button>
-<p *ngFor="let eachClick of clickDataArray" 
-[ngStyle]="{backgroundColor: eachClick>110? 'red':'blue'}"
-[ngClass]="{'text-white': eachClick>110}"
-[ngClass]="{'text-green': eachClick<=110}"
+<p *ngFor="let eachClick of clickDataArray; let i = index" 
+[ngStyle]="{backgroundColor: i>=5? 'red':'blue'}"
+[ngClass]="{'text-white': i>=5}"
+[ngClass]="{'text-green': i<5}"
 class="m-2">{{ eachClick }}</p>
+
